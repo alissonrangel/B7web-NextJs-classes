@@ -1,4 +1,5 @@
 - npx create-next-app --typescript
+- https://jsonplaceholder.typicode.com/posts
 
 - Rotas dinâmicas e Estáticas
 
