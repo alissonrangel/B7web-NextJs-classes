@@ -2,13 +2,14 @@ import { Post } from "../../types/Post";
 
 type Props = {
   name: string;
+  private_name: string;
   posts: Post[];
 }
 
-const Blog = ({name, posts}: Props) => {
+const Blog = ({name, posts, private_name}: Props) => {
   return (
     <>
-      <h1>Blog {name}</h1>
+      <h1>Blog {name} - {private_name}</h1>
 
       {
         posts.map((item) => (
@@ -27,6 +28,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
+      private_name: process.env.NOME_PRIVADO,
       name: 'Rangel',
       posts
     },

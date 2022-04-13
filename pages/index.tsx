@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Alisson Next Home Page
+          Welcome to {process.env.NEXT_PUBLIC_NOME} Next Home Page
         </h1>
 
         <p className={styles.description}>

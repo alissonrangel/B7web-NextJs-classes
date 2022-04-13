@@ -1,8 +1,8 @@
 const About = () => {
   return (
     <>
-    <div>Page About v2</div>
-    <a href="/about/alisson">Alisson</a>
+      <div>Page About2 v2</div>
+      <a href="/about/alisson">Alisson</a>
     </>
   )
 }
