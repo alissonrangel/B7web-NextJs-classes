@@ -1,0 +1,11 @@
+
+
+.myBtn {
+  background-color: red;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 0;
+  font-size: 20px;
+  font-weight: bold;
+}

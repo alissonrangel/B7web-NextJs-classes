@@ -42,12 +42,15 @@ const AboutItem = () => {
         }) //não faz adição no historico
       }}>Pedro home page about</button>
 
-      <button onClick={()=>{
+      <button 
+      onClick={()=>{
         router.push({
           pathname: '/about2/[slug]',
           query: { slug: 'Pedro' }
         }) //não faz adição no historico
-      }}>Pedro home page about2</button>
+      }}
+      className="btn btn-primary"
+      >Pedro home page about2</button>
     </div>
   )
 }
