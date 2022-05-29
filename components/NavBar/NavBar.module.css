@@ -16,3 +16,9 @@
 .linkItem a:hover{  
   color: #aaa;
 }
+
+.linkActive a{
+  padding: 0 15px;
+  text-decoration: none;  
+  color: #aaa;
+}

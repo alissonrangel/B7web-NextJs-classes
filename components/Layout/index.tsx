@@ -3,7 +3,7 @@ import NavBar from '../NavBar';
 import styles from './Layout.module.css';
 
 type Props = {
-  children: ReactElement;
+  children?: ReactElement;
 }
 
 const Layout = ({ children }: Props) => {

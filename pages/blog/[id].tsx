@@ -1,6 +1,8 @@
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
+import React from 'react';
+import Layout from '../../components/Layout';
 import { Post } from '../../types/Post';
 
 type Props = {
@@ -14,11 +16,13 @@ const BlogItem = ({post}: Props) => {
   const id = router.query.id;
 
   return (
-    <>
-      <h1>Blog {id}</h1>
-      <h2>a{post.title}</h2>
-      <p>{post.body}</p>
-    </>
+    <Layout>
+      <>
+        <h1>Blog {id}</h1>
+        <h2>a{post ? post.title : 'title'}</h2>
+        <p>{post ? post.body : 'body'}</p>
+      </>
+    </Layout>
   )
 }
 
@@ -27,13 +31,15 @@ export const getStaticPaths = async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const posts: Post[] = await res.json();
 
+  //escolho quais itens eu quero
   const paths = posts.map(post => ({ 
-    params: { 
-      id: post.id.toString()
-    }
-  }));
+        params: { 
+          id: post.id.toString()
+        }
+      })    
+  );
 
-  return { paths, fallback: false }; //true, false => se não tá na lista: 404, 'blocking'
+  return { paths, fallback: false }; //'blocking', true, false => se não tá na lista: 404, 'blocking'
 
 }
 
@@ -51,7 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post
     },
-    revalidate: 10 //7200 segundos - 2 horas
+    revalidate: 100 //7200 segundos - 2 horas
   }
 }
 

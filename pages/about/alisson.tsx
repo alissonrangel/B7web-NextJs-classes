@@ -1,6 +1,11 @@
+import React from "react"
+import Layout from "../../components/Layout";
+
 const Alisson = () => {
   return (
-    <div>Page Alisson v3</div>    
+    <Layout>
+      <div>Page Alisson v3</div>    
+    </Layout>
   )
 }
 

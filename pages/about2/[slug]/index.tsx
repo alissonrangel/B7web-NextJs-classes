@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Head from 'next/head'
 
 const AboutItem = () => {
 
@@ -21,6 +22,9 @@ const AboutItem = () => {
 
   return (
     <div>
+      <Head>
+        <title>About2 {slug}</title>
+      </Head>
       <h1>Dinamic Page {slug} - {age} anos</h1>
 
       <p>Pathname: {router.pathname}</p>
