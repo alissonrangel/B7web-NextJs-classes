@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
-import TenisImage from '../public/tenis.png';
+import favicon from '../public/favicon.ico';
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to {process.env.NEXT_PUBLIC_NOME} Next Home Page
         </h1>
-        <Image src={TenisImage} width={300} height={300} />
+        <Image src={favicon} width={300} height={300} />
         <Image src='https://www.google.com.br/google.jpg' width={100} height={50} />
 
         <p className={styles.description}>
