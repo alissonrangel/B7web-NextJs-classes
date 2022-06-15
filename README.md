@@ -1,6 +1,15 @@
 - npx create-next-app --typescript
 - https://jsonplaceholder.typicode.com/posts
 
+- npm i nextjs-cors
+
+- npm i -D prisma
+
+- npm i @prisma/client
+
+- npx prisma init
+
+
 - Rotas dinâmicas e Estáticas
 
 #### comportamento natural do react, operações no navegador do usuário
