@@ -7,7 +7,9 @@
 
 - npm i @prisma/client
 
-- npx prisma init
+- npx prisma init // cria arquivo .env
+
+- npx prisma db push
 
 
 - Rotas dinâmicas e Estáticas
