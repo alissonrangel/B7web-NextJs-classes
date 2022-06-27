@@ -5,6 +5,8 @@ import { NextApiHandler} from 'next';
 import { Users } from '../../../utils/users';
 //import NextCors from 'nextjs-cors';
 
+import prisma from "../../../libs/prisma";
+
 const handlerGet: NextApiHandler = async (req, res) => {
   
   const { limit } = req.query;
@@ -19,13 +21,22 @@ const handlerGet: NextApiHandler = async (req, res) => {
 const handlerPost: NextApiHandler = async (req, res) => {
   const { limit } = req.query;
 
+  const { name, email } = req.body;
+
   if (limit) {
     console.log(limit); 
   }
 
+  const newUser = await prisma.user.create({
+    data: {
+      name, email
+    }
+  })
+
+
   console.log(req.body);
   
-  res.status(201).json({status2: true}) 
+  res.status(201).json({status: true, user: newUser}) 
 }
 
 const handler: NextApiHandler = async (req, res) => {

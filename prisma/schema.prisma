@@ -18,19 +18,21 @@ model User {
   createdAt DateTime @default(now())
   active Boolean @default(true)
   role Role @default(USER)
-
+  photos Photo[]
   @@map("users") //nome da tabela no bd
+}
+
+model Photo {
+  id Int @id @default(autoincrement())
+  url String
+  legend String?
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+
+  @@map("photos")
 }
 
 enum Role {
   USER
   ADMIN
-}
-
-model Photos {
-  id Int @id @default(autoincrement())
-  url String
-  legend String?
-
-  @@map("photos")
 }
