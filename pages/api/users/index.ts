@@ -15,7 +15,13 @@ const handlerGet: NextApiHandler = async (req, res) => {
     console.log(limit); 
   }
 
-  res.status(200).json(Users)  
+  let users = await prisma.user.findMany({
+    where: {
+      active: true
+    }
+  });
+
+  res.status(200).json({ status: true, users})  
 }
 
 const handlerPost: NextApiHandler = async (req, res) => {
